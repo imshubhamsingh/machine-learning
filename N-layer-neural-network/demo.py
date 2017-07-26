@@ -1,0 +1,37 @@
+from numpy import *
+
+
+class NLayerNeuralNetwork:
+    def __init__(self):
+        self.layer = 1
+        self.synaptic_weights = {}
+        self.adjustment = {}
+        self.neurons_in_layers = {}
+
+    # activation function
+    def __sigmoid(self, x):
+        return 1 / (1 + np.exp(-x))
+
+    def __sigmoid_derivative(self, x):
+        return x * (1 - x)
+
+    def neurons_in_input_layer(self, inputs):
+        self.neurons_in_layers[self.layer] = inputs
+
+    def add_layer(self, no_of_sigmoid_neurons):
+        # adding random weight to new layer
+        self.synaptic_weights[self.layer] = 2 * random.random(
+            (no_of_sigmoid_neurons, self.neurons_in_layers[self.layer])) - 1
+        # setting initial adjustment to zero
+        self.adjustment[self.layer] = zeros((no_of_sigmoid_neurons, 1))
+        self.layer += 1
+        self.neurons_in_layers[self.layer] = no_of_sigmoid_neurons
+
+
+if __name__ == "__main__":
+    neural_network = NLayerNeuralNetwork()
+    neural_network.neurons_in_input_layer(3)
+    neural_network.add_layer(3)
+    print(neural_network.synaptic_weights)
+    neural_network.add_layer(3)
+    print(neural_network.synaptic_weights)
