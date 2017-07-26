@@ -19,15 +19,17 @@ class NeuralNetwork:
             error = training_set_outputs - output
 
             adjustment = dot(training_set_inputs.T, error * self._sigmoid_derivative(output))
+            # print(output)
 
             self.synaptic_weights += adjustment
 
     def predict(self, inputs):
+        print(self.synaptic_weights)
         return self._sigmoid(dot(inputs, self.synaptic_weights))
 
 
 if __name__ == "__main__":
-    # initialize a single neuron neural network
+    # initialize a single neuron neural networkself.__sigmoid_derivative(output)
     neural_network = NeuralNetwork()
 
     print('Random starting synaptic weights')
