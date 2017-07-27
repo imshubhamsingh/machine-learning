@@ -8,6 +8,8 @@ class NLayerNeuralNetwork:
         self.adjustment = {}
         self.neurons_in_layers = {}
         self.hidden_layer_value = {}
+        self.output_layer_value = {}
+        self.delta = {}
 
     # activation function
     def __sigmoid(self, x):
@@ -19,60 +21,71 @@ class NLayerNeuralNetwork:
     def neurons_in_input_layer(self, inputs):
         self.neurons_in_layers[self.layer] = inputs
 
-    def output_neuron(self, number):
-        self.synaptic_weights[self.layer] = 2 * random.random(
-            (number, self.neurons_in_layers[self.layer])) - 1
+    def output_layer_neuron(self, input):
+        self.layer += 1
+        self.synaptic_weights[self.layer - 1] = 2 * random.random(
+            (self.neurons_in_layers[self.layer - 1], input)) - 1
         # print(self.neurons_in_layers[self.layer])
-        self.adjustment[self.layer + 1] = zeros((number, self.neurons_in_layers[self.layer]))
-        self.neurons_in_layers[self.layer + 1] = 1
+        self.adjustment[self.layer] = zeros((self.neurons_in_layers[self.layer - 1], input))
+        self.neurons_in_layers[self.layer] = input
 
     def add_layer(self, no_of_sigmoid_neurons):
         self.layer += 1
         # adding random weight to new layer
         self.synaptic_weights[self.layer - 1] = 2 * random.random(
-            (no_of_sigmoid_neurons, self.neurons_in_layers[self.layer - 1])) - 1
+            (self.neurons_in_layers[self.layer - 1], no_of_sigmoid_neurons)) - 1
         # setting initial adjustment to zero
-        self.adjustment[self.layer] = zeros((no_of_sigmoid_neurons, 1))
+        self.adjustment[self.layer] = zeros((self.neurons_in_layers[self.layer - 1], no_of_sigmoid_neurons))
         self.neurons_in_layers[self.layer] = no_of_sigmoid_neurons
+
+    def backward_propagation(self, training_set_inputs):
+        for layer in sorted(self.neurons_in_layers.keys(), reverse=True):
+            if layer != len(self.neurons_in_layers) and layer != 1:
+                self.delta[layer] = self.delta[layer + 1].dot(
+                    self.synaptic_weights[layer].T) * self.__sigmoid_derivative(
+                    self.hidden_layer_value[layer - 1])
+
+        for layer in sorted(self.neurons_in_layers.keys(), reverse=True):
+            if layer == len(self.neurons_in_layers):
+                self.synaptic_weights[layer - 1] += self.output_layer_value.T.dot(self.delta[layer])
+            elif layer < len(self.neurons_in_layers) and layer > 2:
+                self.synaptic_weights[layer - 1] += self.hidden_layer_value[layer - 1].T.dot(self.delta[layer])
+            elif layer == 1:
+                self.synaptic_weights[layer] += training_set_inputs.T.dot(self.delta[layer + 1])
+            else:
+                pass
 
     def predict(self, inputs):
         value = None
         for layer in self.neurons_in_layers:
             if layer != len(self.neurons_in_layers):
-                for weights in self.synaptic_weights[layer]:
-                    # print(weights)
-                    # print(inputs)
-                    value = self.__sigmoid(dot(inputs, weights.T))
-                    if self.hidden_layer_value.get(layer) is None:
-                        self.hidden_layer_value[layer] = value.T
-                    else:
-                        self.hidden_layer_value[layer] = stack((self.hidden_layer_value[layer], value.T))
-                inputs = self.hidden_layer_value[layer].T
-        return self.hidden_layer_value
+                value = self.__sigmoid(dot(inputs, self.synaptic_weights[layer]))
+                inputs = value
+                if layer < len(self.neurons_in_layers) - 1:
+                    self.hidden_layer_value[layer] = value
+                else:
+                    self.output_layer_value = value
+        return self.output_layer_value
 
-    def train(self, training_set_inputs, training_set_outputs, learning_rate=1, stop_accuracy=1e-5,
-              number_of_iterations=1):
+    def train(self, training_set_inputs, training_set_outputs, number_of_iterations=200000):
+        output = None
         for iteration in range(number_of_iterations):
             output = self.predict(training_set_inputs)
-            # print(type(training_set_input))
-            # print(training_set_outputs-output)
-
-            error = training_set_outputs - array([output[3]]).T
-            print(error)
-            # adjustment = dot(training_set_inputs.T, error * self.__sigmoid_derivative(output))
-            #
-            # self.synaptic_weights[1] += adjustment.T
+            error_in_output = training_set_outputs - output
+            # print("error in output: ", error_in_output)
+            self.delta[len(self.neurons_in_layers)] = error_in_output * self.__sigmoid_derivative(output)
+            self.backward_propagation(training_set_inputs)
+        print("output: ", output)
 
 
 if __name__ == "__main__":
     neural_network = NLayerNeuralNetwork()
-    neural_network.neurons_in_input_layer(3)
-    neural_network.add_layer(2)
-    neural_network.add_layer(2)
-    neural_network.output_neuron(1)
+    neural_network.neurons_in_input_layer(2)
+    # output layer
+    neural_network.output_layer_neuron(1)
     # print(neural_network.synaptic_weights)
-    training_set_input = array([[0, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
-    training_set_outputs = array([[0, 1, 1, 0]]).T
+    training_set_input = array([[0, 0], [0, 1], [1, 0], [1, 1]])
+    training_set_outputs = array([[1], [0], [0], [1]])
 
     neural_network.train(training_set_input, training_set_outputs)
     # print('Predicting')
