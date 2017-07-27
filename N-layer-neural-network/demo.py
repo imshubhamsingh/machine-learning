@@ -65,13 +65,14 @@ class NLayerNeuralNetwork:
             # I'm not checking the final layer because for every n layer there will only be n-1 links
             if layer != len(self.neurons_in_layers):
                 value = self.__sigmoid(dot(inputs, self.synaptic_weights[layer]))
+                # value of neurons in next layer depends on previous layer
                 inputs = value
 
                 if layer < len(self.neurons_in_layers) - 1:
-                    # saving the value for hidden layer
+                    # saving the value for hidden layer neurons
                     self.hidden_layer_value[layer + 1] = value
                 else:
-                    # on second last layer, saving the value for final layer
+                    # on second last layer, saving the value for final layer neuron(s)
                     self.output_layer_value = value
         # return output layer value
         return self.output_layer_value
