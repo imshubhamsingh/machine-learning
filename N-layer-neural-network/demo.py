@@ -72,16 +72,19 @@ class NLayerNeuralNetwork:
 
 if __name__ == "__main__":
     neural_network = NLayerNeuralNetwork()
-    neural_network.neurons_in_input_layer(2)
+    neural_network.neurons_in_input_layer(3)
     # hidden layer
     neural_network.add_layer(3)
     neural_network.add_layer(4)
     # output layer
     neural_network.output_layer_neuron(1)
-    training_set_input = array([[0, 0], [0, 1], [1, 0], [1, 1]])
+
+    # training_set_input = array([[0, 0], [0, 1], [1, 0], [1, 1]])
+    # training_set_outputs = array([[0], [1], [1], [0]])
+    training_set_input = array([[0, 0, 1], [1, 1, 1], [1, 0, 1], [0, 1, 1]])
     training_set_outputs = array([[0], [1], [1], [0]])
 
     neural_network.train(training_set_input, training_set_outputs)
     print('Predicting')
-    print('Consider new situation [0, 0] -> ?: ')
-    print("Predicted Value: \n", neural_network.predict(array([[0, 0]])))
+    print('Consider new situation [1, 0, 0] -> ?: ')
+    print(neural_network.predict(array([1, 0, 0])))

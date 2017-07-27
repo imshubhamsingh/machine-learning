@@ -39,4 +39,4 @@ for i in range(epochs):
     print("output layer weights: \n", Wz)
     print("hidden layer weights: \n", Wh)
 
-print("Z: ", Z)  # what have we learnt?
+print("Z: ", Z)  # cool
