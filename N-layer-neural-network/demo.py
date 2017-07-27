@@ -26,15 +26,15 @@ class NLayerNeuralNetwork:
     # output layer
     def output_layer_neuron(self, input):
         self.layer += 1
+        # adding random weight to links between final layer  and previous layer
         self.synaptic_weights[self.layer - 1] = random.uniform(
             size=(self.neurons_in_layers[self.layer - 1], input))
-        # # print(self.neurons_in_layers[self.layer-1])
         self.neurons_in_layers[self.layer] = input
 
     # hidden layer
     def add_layer(self, no_of_sigmoid_neurons):
         self.layer += 1
-        # adding random weight to new layer
+        # adding random weight to links between new layer and previous layer
         self.synaptic_weights[self.layer - 1] = random.uniform(
             size=(self.neurons_in_layers[self.layer - 1], no_of_sigmoid_neurons))
         self.neurons_in_layers[self.layer] = no_of_sigmoid_neurons
