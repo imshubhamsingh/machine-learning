@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fda90ed-8e31-4cb1-b1e4-3815f1a5e1e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow/101/placeholder-demo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow/101/variables.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow/101/network.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/shubham.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/shubham.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +16,15 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/machine_learning$1.coverage" NAME="1 Coverage Results" MODIFIED="1501562902483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow/101" />
     <SUITE FILE_PATH="coverage/machine_learning$regression_intro_and_data.coverage" NAME="regression-intro-and-data Coverage Results" MODIFIED="1500869130942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/machine_learning$sessionTesorflow.coverage" NAME="sessionTesorflow Coverage Results" MODIFIED="1501562986079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow/101" />
     <SUITE FILE_PATH="coverage/machine_learning$machine_learning.coverage" NAME="machine-learning Coverage Results" MODIFIED="1501238063887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/machine_learning$animal_brain_to_body_predictor.coverage" NAME="animal-brain-to-body-predictor Coverage Results" MODIFIED="1501002458081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/machine_learning$demo__3_.coverage" NAME="demo (3) Coverage Results" MODIFIED="1501292460594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/N-layer-neural-network" />
+    <SUITE FILE_PATH="coverage/machine_learning$network.coverage" NAME="network Coverage Results" MODIFIED="1501631400548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow/101" />
+    <SUITE FILE_PATH="coverage/machine_learning$placeholder_demo.coverage" NAME="placeholder-demo Coverage Results" MODIFIED="1501574083519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow/101" />
+    <SUITE FILE_PATH="coverage/machine_learning$sessionTesorflow.coverage" NAME="sessionTesorflow Coverage Results" MODIFIED="1501562986079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow/101" />
     <SUITE FILE_PATH="coverage/machine_learning$demo__2_.coverage" NAME="demo (2) Coverage Results" MODIFIED="1501051986799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3-layer-neural-network" />
     <SUITE FILE_PATH="coverage/machine_learning$variables.coverage" NAME="variables Coverage Results" MODIFIED="1501566322522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow/101" />
-    <SUITE FILE_PATH="coverage/machine_learning$animal_brain_to_body_predictor.coverage" NAME="animal-brain-to-body-predictor Coverage Results" MODIFIED="1501002458081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/machine_learning$3_layer_neural_network.coverage" NAME="3-layer-neural-network Coverage Results" MODIFIED="1501147674803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/N-layer-neural-network" />
-    <SUITE FILE_PATH="coverage/machine_learning$demo__3_.coverage" NAME="demo (3) Coverage Results" MODIFIED="1501292460594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/N-layer-neural-network" />
     <SUITE FILE_PATH="coverage/machine_learning$demo.coverage" NAME="demo Coverage Results" MODIFIED="1501038998251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient_descent" />
     <SUITE FILE_PATH="coverage/machine_learning$demo__1_.coverage" NAME="demo (1) Coverage Results" MODIFIED="1501551337208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/single-layer-neural-network" />
   </component>
@@ -67,12 +69,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="placeholder-demo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="placeholder-demo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow/101/placeholder-demo.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="57" lean-forward="false" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+              <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="network.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tensorflow/101/network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="62" column="14" lean-forward="false" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,6 +129,9 @@
         <option value="$PROJECT_DIR$/tensorflow/101/sessionTesorflow.py" />
         <option value="$PROJECT_DIR$/tensorflow/101/variables.py" />
         <option value="$PROJECT_DIR$/tensorflow/101/placeholder-demo.py" />
+        <option value="$PROJECT_DIR$/tensorflow/101/activation-function.py" />
+        <option value="$PROJECT_DIR$/tensorflow/101/adding-layer.py" />
+        <option value="$PROJECT_DIR$/tensorflow/101/network.py" />
       </list>
     </option>
   </component>
@@ -199,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.variables">
+  <component name="RunManager" selected="Python.network">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -366,42 +383,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration name="demo (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/single-layer-neural-network" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="machine-learning" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/single-layer-neural-network/demo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="demo (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/N-layer-neural-network" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="machine-learning" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/N-layer-neural-network/demo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="machine-learning" type="Python.Ipnb" factoryName="Jupyter Notebook">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -418,6 +399,42 @@
       <option name="additionalOptions" value="" />
       <option name="ipnbHost" value="127.0.0.1" />
       <option name="ipnbPort" value="8888" />
+    </configuration>
+    <configuration name="network" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow/101" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machine-learning" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow/101/network.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="placeholder-demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow/101" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machine-learning" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow/101/placeholder-demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration name="sessionTesorflow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -457,19 +474,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Jupyter Notebook.machine-learning" />
-      <item index="1" class="java.lang.String" itemvalue="Python.demo (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.demo (3)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.1" />
-      <item index="4" class="java.lang.String" itemvalue="Python.sessionTesorflow" />
-      <item index="5" class="java.lang.String" itemvalue="Python.variables" />
+      <item index="1" class="java.lang.String" itemvalue="Python.1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.sessionTesorflow" />
+      <item index="3" class="java.lang.String" itemvalue="Python.variables" />
+      <item index="4" class="java.lang.String" itemvalue="Python.placeholder-demo" />
+      <item index="5" class="java.lang.String" itemvalue="Python.network" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.variables" />
-        <item index="1" class="java.lang.String" itemvalue="Python.sessionTesorflow" />
-        <item index="2" class="java.lang.String" itemvalue="Python.1" />
-        <item index="3" class="java.lang.String" itemvalue="Python.demo (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.demo (3)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.network" />
+        <item index="1" class="java.lang.String" itemvalue="Python.placeholder-demo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.variables" />
+        <item index="3" class="java.lang.String" itemvalue="Python.sessionTesorflow" />
+        <item index="4" class="java.lang.String" itemvalue="Python.1" />
       </list>
     </recent_temporary>
   </component>
@@ -699,8 +716,18 @@
     <entry file="file://$PROJECT_DIR$/tensorflow/101/placeholder-demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="57" lean-forward="false" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow/101/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="62" column="14" lean-forward="false" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
