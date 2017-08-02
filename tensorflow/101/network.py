@@ -49,9 +49,23 @@ init = tf.initialize_all_variables()
 sess = tf.Session()
 sess.run(init)
 
-for i in range(1000):
+fig = plt.figure()
+ax = fig.add_subplot(1, 1, 1)
+ax.scatter(x_data, y_data, s=1, color='b')
+plt.ion()
+plt.show()
+
+
+for i in range(2000):
     # train
     sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
     if i % 50 == 0:
         # to see the step for improvement
-        print(sess.run(loss, feed_dict={xs: x_data, ys: y_data}))
+        # print(sess.run(loss, feed_dict={xs: x_data, ys: y_data}))
+        try:
+            ax.lines.remove(ax.lines[0])
+        except Exception:
+            pass
+        prediction_value = sess.run(prediction, feed_dict={xs: x_data, ys: y_data})
+        line = ax.plot(x_data, prediction_value, c='r', lw=5)
+        plt.pause(0.1)
